@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="A polished scientific calculator built with HTML, CSS and JavaScript.">
+  <title>KANHA X — Scientific Calculator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="calculator" aria-label="Calculator">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">⌁</span><div><strong>KANHA X</strong><small>Scientific Calculator</small></div></div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☼</button>
+          <button class="icon-btn" id="historyBtn" title="Show history" aria-label="Show history">◷</button>
+        </div>
+      </header>
+
+      <section class="display" aria-live="polite">
+        <div class="status-row"><span id="angleMode">DEG</span><span id="memoryIndicator" class="memory-indicator hidden">M</span><span id="statusMessage"></span></div>
+        <div class="expression" id="expression">0</div>
+        <div class="result" id="result">0</div>
+      </section>
+
+      <section class="controls" aria-label="Calculator controls">
+        <button class="control" id="angleBtn">DEG</button>
+        <button class="control" data-action="constant" data-value="pi">π</button>
+        <button class="control" data-action="constant" data-value="e">e</button>
+        <button class="control" data-action="openParen">(</button>
+        <button class="control" data-action="closeParen">)</button>
+        <button class="control" data-action="backspace">⌫</button>
+      </section>
+
+      <section class="keypad">
+        <button class="key function" data-action="scientific" data-value="sin">sin</button>
+        <button class="key function" data-action="scientific" data-value="cos">cos</button>
+        <button class="key function" data-action="scientific" data-value="tan">tan</button>
+        <button class="key function" data-action="scientific" data-value="log">log</button>
+        <button class="key function" data-action="scientific" data-value="ln">ln</button>
+        <button class="key function" data-action="scientific" data-value="sqrt">√</button>
+        <button class="key function" data-action="scientific" data-value="square">x²</button>
+        <button class="key function" data-action="scientific" data-value="cube">x³</button>
+        <button class="key function" data-action="scientific" data-value="reciprocal">1/x</button>
+        <button class="key function" data-action="scientific" data-value="factorial">n!</button>
+        <button class="key function" data-action="scientific" data-value="percent">%</button>
+        <button class="key function" data-action="scientific" data-value="negate">±</button>
+
+        <button class="key memory" data-action="memory" data-value="MC">MC</button>
+        <button class="key memory" data-action="memory" data-value="MR">MR</button>
+        <button class="key memory" data-action="memory" data-value="M+">M+</button>
+        <button class="key memory" data-action="memory" data-value="M-">M−</button>
+        <button class="key memory" data-action="memory" data-value="MS">MS</button>
+        <button class="key danger" data-action="clear">AC</button>
+
+        <button class="key number" data-value="7">7</button>
+        <button class="key number" data-value="8">8</button>
+        <button class="key number" data-value="9">9</button>
+        <button class="key operator" data-value="÷">÷</button>
+        <button class="key operator" data-value="^">^</button>
+        <button class="key operator" data-value="mod">mod</button>
+
+        <button class="key number" data-value="4">4</button>
+        <button class="key number" data-value="5">5</button>
+        <button class="key number" data-value="6">6</button>
+        <button class="key operator" data-value="×">×</button>
+        <button class="key operator" data-value="−">−</button>
+        <button class="key function" data-action="scientific" data-value="abs">|x|</button>
+
+        <button class="key number" data-value="1">1</button>
+        <button class="key number" data-value="2">2</button>
+        <button class="key number" data-value="3">3</button>
+        <button class="key operator" data-value="+">+</button>
+        <button class="key function" data-action="scientific" data-value="exp">eˣ</button>
+        <button class="key function" data-action="scientific" data-value="tenpow">10ˣ</button>
+
+        <button class="key number wide" data-value="0">0</button>
+        <button class="key number" data-value=".">.</button>
+        <button class="key function" data-action="scientific" data-value="floor">⌊x⌋</button>
+        <button class="key function" data-action="scientific" data-value="ceil">⌈x⌉</button>
+        <button class="key equals" data-action="equals">=</button>
+      </section>
+
+      <footer class="footer"><span>created by </span><span>•</span><span>er. kanhaiya kumar</span></footer>
+    </section>
+
+    <aside class="history-panel" id="historyPanel" aria-label="Calculation history">
+      <div class="history-header"><h2>History</h2><button id="clearHistory" class="text-btn">Clear</button></div>
+      <div id="historyList" class="history-list"><div class="empty-history">No calculations yet.</div></div>
+    </aside>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
