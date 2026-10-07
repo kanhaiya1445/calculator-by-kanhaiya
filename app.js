@@ -24,7 +24,7 @@
         hours = String(hours).padStart(2, "0");
 
         if (timeEl) {
-            timeEl.textContent = ${hours}:${minutes}:${seconds};
+            timeEl.textContent = `${hours}:${minutes}:${seconds}`;
         }
 
         if (ampmEl) {
